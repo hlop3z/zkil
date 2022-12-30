@@ -1,0 +1,17 @@
+{
+  "name": "my-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "rollup": "rollup dist/lib.js --file release/bundle.js --format iife --name zkil",
+    "addVue": "npm run rollup && cat public/petite-vue.js release/bundle.js > release/lib.js",
+    "minify": "npm run addVue && minify release/lib.js > release/zkil.min.js && rm release/bundle.js release/lib.js",
+    "build": "vite build && npm run minify",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
+}
