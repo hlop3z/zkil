@@ -40,11 +40,12 @@ class GUI {
      */
 
     const uid = name ? name : UID(32, "component");
-    const view = View(uid, methods, data);
+    const templateName = `${uid}-template`;
+    const view = View(templateName, methods, data);
     this.$component[uid] = {
       id: uid,
       view,
-      template: `<template id="${uid}">${code}</template>`,
+      template: `<template id="${templateName}">${code}</template>`,
     };
   }
 }
@@ -58,4 +59,4 @@ function createApp({ val = null, ctx = {}, model = {}, component = {} } = {}) {
   };
 }
 
-export default createApp;
+export default { createApp, inject: xtyle };
