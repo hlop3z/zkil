@@ -5,7 +5,7 @@
 - Total Size **`18-KB`**
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/hlop3z/zkil@main/release/zkil.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hlop3z/zkil@main/release/zkil0.1.0.min.js"></script>
 ```
 
 Slight modification to [`Petite-Vue`](https://github.com/vuejs/petite-vue)
@@ -71,7 +71,7 @@ components["counter"] = {
 
 ```js
 // Create Petite-Vue Project with { Zkil }
-const { app, store, gui, inject } = zkil({
+const { app, store, gui, inject } = zkil.createApp({
   val: globalValues,
   ctx: reactValues,
   model: models,
@@ -106,7 +106,7 @@ app.mount();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zkil App</title>
-    <script src="https://cdn.jsdelivr.net/gh/hlop3z/zkil@main/release/zkil.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hlop3z/zkil@main/release/zkil0.1.0.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
@@ -130,7 +130,7 @@ app.mount();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zkil App</title>
-    <script src="https://cdn.jsdelivr.net/gh/hlop3z/zkil@main/release/zkil.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hlop3z/zkil@main/release/zkil0.1.0.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
@@ -187,7 +187,7 @@ app.mount();
       };
 
       // Create Petite-Vue Project with { Zkil }
-      const { app, store, gui, inject } = zkil({
+      const { app, store, gui, inject } = zkil.createApp({
         val: globalValues,
         ctx: reactValues,
         model: models,
