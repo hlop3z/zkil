@@ -1,7 +1,9 @@
-import UID from "./uid";
+import Dict from "./core/dict";
 import View from "./core/view";
 import Pue from "./core/pue";
-import xtyle from "./util/xtyle";
+import UID from "./util/uid";
+import Xtyle from "./util/xtyle";
+import API from "./util/api";
 
 class GUI {
   constructor(val, ctx, model, component) {
@@ -26,7 +28,7 @@ class GUI {
       codeComponents.push(current.template);
     });
     // Xtyle Inject
-    xtyle.html({ code: codeComponents.join("\n") });
+    Xtyle.html({ code: codeComponents.join("\n") });
     // App
     return Pue.App(appComponents, storeConfig);
   }
@@ -55,8 +57,8 @@ function createApp({ val = null, ctx = {}, model = {}, component = {} } = {}) {
   const app = admin.app;
   return {
     ...app,
-    inject: xtyle,
+    inject: Xtyle,
   };
 }
 
-export default { createApp, inject: xtyle };
+export default { createApp, inject: Xtyle, dict: Dict, api: API };
